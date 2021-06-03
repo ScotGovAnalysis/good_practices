@@ -2,28 +2,30 @@
 Writing good quality code makes life easier for other people and your future self. It can also reduce the risk of errors.
 
 ## :heavy_check_mark: Make a README 
-  * Here is the [Gov Data Science guidance on writing READMEs](https://gds-way.cloudapps.digital/manuals/readme-guidance.html#writing-readmes)
-  * Include
-      * Contact details
-      * How to run the code
-      * A licence (Scottish Government default is [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/))
-      * An estimate of run time if it takes longer than a couple minutes
-  * README's should help the user: 
-      * Understand what the project is
-      * Learn how to use the project
+Here is the [Gov Data Science guidance on writing READMEs](https://gds-way.cloudapps.digital/manuals/readme-guidance.html#writing-readmes)  
+### Include:
+* Contact details
+* How to run the code
+* A licence (Scottish Government default is [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/))
+* An estimate of run time if it takes longer than a couple minutes
+* README's should help the user: 
+    * Understand what the project is
+    * Learn how to use the project
   
 ## :heavy_check_mark: Use a style guide 
-* The default for Scottish Government is the [Tidyverse styleguide](https://style.tidyverse.org/)
-* Lint your code
-    * **Linting**: The automated checking of your source code for programmatic and stylistic errors
-    * [Lintr](https://github.com/jimhester/lintr) checks your code for style, syntax errors and possible semantic issues
-* Use meaningful object names
-    * `height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doinganmd makes your code more readable
+The default for Scottish Government is the [Tidyverse styleguide](https://style.tidyverse.org/)  
+Lint your code:  
+* **Linting**: The automated checking of your source code for programmatic and stylistic errors
+* [Lintr](https://github.com/jimhester/lintr) checks your code for style, syntax errors and possible semantic issues  
+
+Use meaningful object names:   
+* `height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doinganmd makes your code more readable
 
 ## :heavy_check_mark: [Write code for humans](http://douglasorr.github.io/2020-03-data-for-machines/article.html)
 > "Code is read more often than it is written." — [Guido van Rossum](https://twitter.com/gvanrossum) (creator of Python)
 
-> "Programs are meant to be read by humans and only incidentally for computers to execute." — Donald Knuth, The Art of Computer Programming"
+> "Programs are meant to be read by humans and only incidentally for computers to execute."  
+> — Donald Knuth, The Art of Computer Programming
 
 Writing code that humans can understand is an investment to have maintainable and reusable code. If it is easy to read, maintenance and  will be much quicker in the future and it will be much easier for other people to work with your code. 
 The shortest, most efficient code for the computer is likely not the optimal code for human readability. 
@@ -59,7 +61,8 @@ The shortest, most efficient code for the computer is likely not the optimal cod
 
 ### Don't
 * Just explain *what* it is doing
-* Remove any commented *just-in-case* code that isn't needed
+* Keep any commented *just-in-case* code that isn't needed
+* Include #TODO notes within the the code. Keep these separate in a README or in the GitHub issues tab
 * Rely on (un)commenting code to change behaviour
     * You can quickly lose track!
 
@@ -84,20 +87,27 @@ The shortest, most efficient code for the computer is likely not the optimal cod
     * For example, break up the UI, Server & Golbal sections of a large [Shiny app](https://shiny.rstudio.com/articles/basics.html)
 
 ## :heavy_check_mark: Use functions
-  * Functions allow you to automate common tasks rather than repeatedly writing the same code. [R for Data Science](https://r4ds.had.co.nz/functions.html) provides a good explanation for using functions. 
-  * **D**on't **R**epeat **Y**ourself [(DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-      * If you are repeating code, create a function to do it for you
-  * Use several smaller functions rather that one large one. This includes small, well named, helper functions
-  * Use the built in proper functions to simplify 
-      * `if(is.numeric())` is better than `if(class(x) == "numeric" || class(x) == "integer")`
+Functions allow you to automate common tasks rather than repeatedly writing the same code. [R for Data Science](https://r4ds.had.co.nz/functions.html) provides a good explanation for using functions.  
+
+**D**on't **R**epeat **Y**ourself [(DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)  
+* If you are repeating code, create a function to do it for you
+
+## Do
+* Use several smaller functions rather that one large one. This includes small, well named, helper functions  
+* Use the built in proper functions to simplify  
+* `if(is.numeric())` is better than `if(class(x) == "numeric" || class(x) == "integer")` 
+* Use double colon when calling functions
+    * E.g. `readxl::read_xlsx()`
+    * This makes it more obvious where the function is coming from even if it is already loaded in
  
 ## :heavy_check_mark: Automate checks for input data
-* Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated
-* For example, automate checks for:
-    * Outliers
-    * NA's
-    * Class
-    * Expected column names
+Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated  
+
+For example, automate checks for:
+* Outliers
+* NA's
+* Class
+* Expected column names
       
 ## :heavy_check_mark: Code in the open 
 ### Do
@@ -109,3 +119,8 @@ The shortest, most efficient code for the computer is likely not the optimal cod
 ### Don't
 * Share sensitive information such as unpublished data, API keys or passwords
 
+## :heavy_check_mark: Include library version number
+Make a note of the library version number incase future updates to the library break the functionality of your code. In doing this, anyone looking at the code in the future can see when it last worked and begin troubleshooting. 
+
+## Licence
+All content is available under the [Open Government Licence v3.0](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/), except where otherwise stated.
