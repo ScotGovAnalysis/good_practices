@@ -99,6 +99,7 @@ Functions allow you to automate common tasks rather than repeatedly writing the 
 * Use double colon when calling functions
     * E.g. `readxl::read_xlsx()`
     * This makes it more obvious where the function is coming from even if it is already loaded in
+    * And avoids ambiguous code when two packages have a function with the same name
  
 ## :heavy_check_mark: Automate checks for input data
 Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated  
