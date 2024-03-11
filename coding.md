@@ -1,5 +1,5 @@
 # Good Coding Practices
-Writing good quality code makes life easier for other people and your future self. It can also reduce the risk of errors.
+Writing good quality code makes life easier for other people and your future self. It can also reduce the risk of errors. 
 
 ## :heavy_check_mark: Make a README 
 Here is the [Gov Data Science guidance on writing READMEs](https://gds-way.cloudapps.digital/manuals/readme-guidance.html#writing-readmes)  
