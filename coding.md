@@ -7,7 +7,7 @@ Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/2005262
 
 * R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
 * Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
-* With bigger projects, consider creating sub-folders for e.g. code (.R, .Rmd), data (.csv, .xlsx, .rds) and outputs (.docx, .png).
+* With bigger projects, consider creating sub-folders for e.g. code (.R, .Rmd), data (.csv, .data, .rds) and outputs (.docx, .png, .pdf).
 
 ## :heavy_check_mark: Code structure
 Once you have arranged the files and folders in a logical way, then comes the fact that the code itself should be arranged in such a way that feels easy to parse. Always remember: **Code is read more often then it’s written**.
@@ -37,7 +37,7 @@ Once you have arranged the files and folders in a logical way, then comes the fa
     * You can quickly lose track!
 
 ### Create sections
-RStudio gives you an ability to create section by pressing ( ctrl + shift + R ), or you can create one by adding 4 dashes (-) or 4 hash symbol (#) after a comment. The same applies for RMarkdown. For example:
+RStudio gives you an ability to create section with `ctrl` + `shift` + `r`, or you can create one by adding 4 dashes (-) or 4 hash symbol (#) after a comment. The same applies for RMarkdown. For example:
 
     ```
     # Load data ----
@@ -80,10 +80,13 @@ Indentation makes code readable. No matter what language you work in, your code 
 
     ```
     foo <- function(
+
       first_arg, second_arg, third_arg
+
     ){
+
     create_file <- readxl::read_excel(path = first_arg, 
-				      sheet = second_arg, 
+				          sheet = second_arg, 
                                       range = third_arg)
     }
     ```
@@ -171,11 +174,11 @@ Lint your code:
 * [Lintr](https://github.com/jimhester/lintr) checks your code for style, syntax errors and possible semantic issues  
 
 ## :heavy_check_mark: Avoid absolute file paths
-### Do
+#### Do
 * Use relative file paths
     * Use the library [`here()`](https://www.rdocumentation.org/packages/here/versions/1.0.0)
       * `here()` finds your project files based on the current working directory at the time when the package is loaded.
-### Don't
+#### Don't
 * Use absolute file paths as this reduces the reproducability of the code
     * It won't work on another users computer
     * It won't work if any files move
@@ -213,18 +216,18 @@ For example, automate checks for:
 * Expected column names
       
 ## :heavy_check_mark: Code in the open 
-### Do
+#### Do
 * Coding in the open encourages:
      * The use of good code practice so others can read your code
      * Collaboration
      * Code reviews and [pull requests](https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/creating-an-issue-or-pull-request)
-* Code in the open if you can, e.g. use [Data Science Scotland GitHub](https://github.com/DataScienceScotland)
-### Don't
+* Code in the open if you can, e.g. use [Scottish Government Analysis](https://github.com/ScotGovAnalysis)
+#### Don't
 * Share sensitive information such as unpublished data, API keys or passwords
 
 ## :heavy_check_mark: Make a README 
 Here is the [Gov Data Science guidance on writing READMEs](https://gds-way.cloudapps.digital/manuals/readme-guidance.html#writing-readmes)  
-### Include:
+#### Include:
 * Contact details
 * How to run the code
 * A licence (Scottish Government default is [Open Government Licence](http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/))
