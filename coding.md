@@ -3,11 +3,11 @@ Writing good quality code makes life easier for other people and your future sel
 
 ## :heavy_check_mark: Create a Project
 ### Do
-Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
-      * R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
-      * Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
-      * With bigger projects, consider creating sub-folders for e.g. code (.R, .Rmd), data (.csv, .xlsx, .rds) and outputs (.docx, .png).
+* R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
+* Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
+* With bigger projects, consider creating sub-folders for e.g. code (.R, .Rmd), data (.csv, .xlsx, .rds) and outputs (.docx, .png).
 
 ## :heavy_check_mark: Code structure
 Once you have arranged the files and folders in a logical way, then comes the fact that the code itself should be arranged in such a way that feels easy to parse. Always remember: **Code is read more often then it’s written**.
@@ -51,9 +51,9 @@ You can also create sub-section in R by adding hash symbols in front of a sectio
     ```
     ## some comment ----
 
-    ### some comment ----
+    ### another comment ----
 
-    #### some comment ----
+    #### and yet another comment ----
     ```
 ### Order your code
 When you write code there are standard practices that are used across domains that you should definitely use, in the following order:
@@ -79,7 +79,7 @@ Indentation makes code readable. No matter what language you work in, your code 
    #### Good:
 
     ```
-   foo <- function(
+    foo <- function(
       first_arg, second_arg, third_arg
     ){
     create_file <- readxl::read_excel(path = first_arg, 
@@ -103,7 +103,7 @@ Indentation makes code readable. No matter what language you work in, your code 
            start = 2010)
     ```
 
-In RStudio you can simply press `ctrl` + `shift` + `a` to autoformat your code.
+In RStudio you can press `ctrl` + `shift` + `a` to autoformat your code.
 
 ## :heavy_check_mark: [Write code for humans](http://douglasorr.github.io/2020-03-data-for-machines/article.html)
 > "Code is read more often than it is written." — [Guido van Rossum](https://twitter.com/gvanrossum) (creator of Python)
@@ -122,6 +122,42 @@ Proper naming conventions will help collaboration in big teams and it makes the 
 
 Whichever convention you choose, make sure to stick with it for the duration of your project.
 
+### Maintain meaningful and proper object names
+  
+* `height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doing and makes your code more readable
+
+### Maintain meaningful and proper column names
+Most of the data we read is from either an Excel file or a poorly designed database, thus we see column names having spaces and dots and other suboptimal formats. Remember these rules for column names:
+
+1. Stick to consistent naming convention (see above)
+2. Assume everything is case-sensitive.
+3. Do not use special characters ever.
+4. Do not add spaces.
+
+### Do not use numbers to specify columns
+In R you can use numbers to refer to columns but just because you can doesn’t mean you should.
+
+   #### Bad:
+
+    ```
+    # In base R
+    mtcars[,c(1,3:5,8)]
+
+    # Using tidyverse
+    mtcars %>% select(1, 3:5, 8)
+    ```
+
+   #### Good:
+
+    ```
+    # In base R
+    mtcars[, c("mpg", "disp", "hp", "drat", "vs")]
+
+    # Using tidyverse
+    mtcars %>% 
+      select(mpg, disp, hp, drat, vs)
+    ```
+
 #### Do
 * `case_when()` creates an a more readable way of dealing with many ifelse statements. `if_else` statements can be very useful but can become hard to understand if too many are used.
 #### Don't
@@ -133,9 +169,6 @@ The default for Scottish Government is the [Tidyverse styleguide](https://style.
 Lint your code:  
 * **Linting**: The automated checking of your source code for programmatic and stylistic errors
 * [Lintr](https://github.com/jimhester/lintr) checks your code for style, syntax errors and possible semantic issues  
-
-Use meaningful object names:   
-* `height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doinganmd makes your code more readable
 
 ## :heavy_check_mark: Avoid absolute file paths
 ### Do
