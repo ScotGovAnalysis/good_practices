@@ -114,11 +114,11 @@ In RStudio you can press `ctrl` + `shift` + `a` to autoformat your code.
 > "Programs are meant to be read by humans and only incidentally for computers to execute."  
 > — Donald Knuth, The Art of Computer Programming
 
-Writing code that humans can understand is an investment to have maintainable and reusable code. If it is easy to read, maintenance and  will be much quicker in the future and it will be much easier for other people to work with your code. 
+Writing code that humans can understand is an investment to have maintainable and reusable code. If it is easy to read, maintenance and  edits will be much quicker in the future and it will be much easier for other people to work with your code. 
 The shortest, most efficient code for the computer is likely not the optimal code for human readability. 
 
 ### Naming conventions
-Proper naming conventions will help collaboration in big teams and it makes the code easier to maintain. The three most famous naming conventions in programming communities are:
+Proper naming conventions will help collaboration in big teams and it makes the code easier to maintain. The three most widely-used conventions amongst programming communities are:
 * camelCase: Names start with a small letter and every subsequent will start with upperCase
 * PascalCase: Similar to camelCase but the first letter of the string is also UpperCase
 * snake_case: All names are lower case with an underscore between words
@@ -127,10 +127,10 @@ Whichever convention you choose, make sure to stick with it for the duration of 
 
 ### Maintain meaningful and proper object names
   
-* `height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doing and makes your code more readable
+`height_in_metres()` is better than `converter()` for a function that converts height into metres. This makes it more obvious what your code is doing and makes your code more readable
 
 ### Maintain meaningful and proper column names
-Most of the data we read is from either an Excel file or a poorly designed database, thus we see column names having spaces and dots and other suboptimal formats. Remember these rules for column names:
+Most of the data we read is from either an Excel file or a poorly designed database, thus we see column names with spaces and dots and other rogue characters. Remember these rules for column names:
 
 1. Stick to consistent naming convention (see above)
 2. Assume everything is case-sensitive.
@@ -138,7 +138,7 @@ Most of the data we read is from either an Excel file or a poorly designed datab
 4. Do not add spaces.
 
 ### Do not use numbers to specify columns
-In R you can use numbers to refer to columns but just because you can doesn’t mean you should.
+In R you can use numbers to refer to columns, but (to parapharse a noted scholar) just because you can doesn’t mean you should.
 
    #### Bad:
 
@@ -161,14 +161,17 @@ In R you can use numbers to refer to columns but just because you can doesn’t 
       select(mpg, disp, hp, drat, vs)
     ```
 
+### Conditional statements
+
 #### Do
-* `case_when()` creates an a more readable way of dealing with many ifelse statements. `if_else` statements can be very useful but can become hard to understand if too many are used.
+* Use `case_when()` within the `tidyverse` collection, creates an a more readable way of dealing with many ifelse statements. Standard `if_else` statements can be very useful but can become hard to understand if too many are used.
 #### Don't
 * Use deeply nested `for` loops or `if_else` statements
 
  
 ## :heavy_check_mark: Use a style guide 
 The default for Scottish Government is the [Tidyverse styleguide](https://style.tidyverse.org/)  
+
 Lint your code:  
 * **Linting**: The automated checking of your source code for programmatic and stylistic errors
 * [Lintr](https://github.com/jimhester/lintr) checks your code for style, syntax errors and possible semantic issues  
@@ -201,13 +204,13 @@ Functions allow you to automate common tasks rather than repeatedly writing the 
 * Use several smaller functions rather that one large one. This includes small, well named, helper functions  
 * Use the built in proper functions to simplify  
 * `if(is.numeric())` is better than `if(class(x) == "numeric" || class(x) == "integer")` 
-* Use double colon when calling functions
+* Use double colon when calling functions if you have not loaded a library already
     * E.g. `readxl::read_xlsx()`
-    * This makes it more obvious where the function is coming from even if it is already loaded in
+    * This makes it more obvious where the function is coming from
     * And avoids ambiguous code when two packages have a function with the same name
  
 ## :heavy_check_mark: Automate checks for input data
-Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated  
+Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated.
 
 For example, automate checks for:
 * Outliers
