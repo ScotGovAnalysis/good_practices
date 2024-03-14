@@ -4,6 +4,7 @@ Writing good quality code makes life easier for other people and your future sel
 ## :heavy_check_mark: Create a Project
 ### Do
     * Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+
       * R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
       * Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
       * With bigger projects, consider creating sub-folders for e.g. code (.R, .Rmd), data (.csv, .xlsx, .rds) and outputs (.docx, .png).
@@ -14,7 +15,7 @@ Once you have arranged the files and folders in a logical way, then comes the fa
 ### Commenting code
 > "When you feel the need to write a comment, first try to refactor the code so that any comment becomes superfluous." – Martin Fowler, Refactoring
 
-### Do
+#### Do
 * Explain _**why**_ it is doing what it is doing. This will make it easier for users to know what the code is for
 
     #### Good Comment:
@@ -28,7 +29,7 @@ Once you have arranged the files and folders in a logical way, then comes the fa
        select(1:161)  # selecting columns
     ```
 
-### Don't
+#### Don't
 * Just explain *what* it is doing
 * Keep any commented *just-in-case* code that isn't needed
 * Include #TODO notes within the the code. Keep these separate in a README or in the GitHub issues tab
@@ -37,6 +38,7 @@ Once you have arranged the files and folders in a logical way, then comes the fa
 
 ### Create sections
 RStudio gives you an ability to create section by pressing ( ctrl + shift + R ), or you can create one by adding 4 dashes (-) or 4 hash symbol (#) after a comment. The same applies for RMarkdown. For example:
+
     ```
     # Load data ----
 
@@ -45,9 +47,12 @@ RStudio gives you an ability to create section by pressing ( ctrl + shift + R ),
 It also helps you jump between sections using `shift`+ `alt` + `j`. You can easily switch between sections and fold them at will. It helps you not only in navigation but maintaining a layout of the entire code as well.
 
 You can also create sub-section in R by adding hash symbols in front of a section:
+
     ```
     ## some comment ----
+
     ### some comment ----
+
     #### some comment ----
     ```
 ### Order your code
@@ -63,32 +68,40 @@ This coherence keeps all your code easy to find.
 Indentation makes code readable. No matter what language you work in, your code should be properly indented so that the nature of the code is understandable.
 
    #### Bad:
+
     ```
   foo <- function(first_arg, second_arg, third_arg){
   create_file <- readxl::read_excel(path = first_arg, sheet = second_arg, range = third_arg)
 }
     ```
+
    #### Good:
+
     ```
     foo <- function(
       first_arg, second_arg, third_arg
-  ){
+){
     create_file <- readxl::read_excel(path = first_arg, 
 				      sheet = second_arg, 
                                       range = third_arg)
-  }
+}
     ```
+
 ### Give your code breathing room.
 
    #### Bad:
+
     ```
     y=ts(data=c(23,391,728,512,10),start=2010)
     ```
+
    #### Good:
+
     ```
     y = ts(data = c(23, 391, 728, 512, 10), 
            start = 2010)
     ```
+
 In RStudio you can simply press `ctrl` + `shift` + `a` to autoformat your code.
 
 ## :heavy_check_mark: [Write code for humans](http://douglasorr.github.io/2020-03-data-for-machines/article.html)
@@ -108,9 +121,9 @@ Proper naming conventions will help collaboration in big teams and it makes the 
 
 Whichever convention you choose, make sure to stick with it for the duration of your project.
 
-### Do
+#### Do
 * `case_when()` creates an a more readable way of dealing with many ifelse statements. `if_else` statements can be very useful but can become hard to understand if too many are used.
-### Don't
+#### Don't
 * Use deeply nested `for` loops or `if_else` statements
 
  
@@ -134,10 +147,10 @@ Use meaningful object names:
     * It won't work if any files move
       
 ## :heavy_check_mark: Keep scripts short
-### Do
+#### Do
 * Ideally keep to fewer than 250 lines. This makes scripts more manageable
 * Break up and `source()` sections like data processing, and variable or function assigning
-### Don't
+#### Don't
 * Keep everything for a large project in one script  
     * For example, break up the UI, Server & Golbal sections of a large [Shiny app](https://shiny.rstudio.com/articles/basics.html)
 
@@ -147,7 +160,7 @@ Functions allow you to automate common tasks rather than repeatedly writing the 
 **D**on't **R**epeat **Y**ourself [(DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)  
 * If you are repeating code, create a function to do it for you
 
-## Do
+#### Do
 * Use several smaller functions rather that one large one. This includes small, well named, helper functions  
 * Use the built in proper functions to simplify  
 * `if(is.numeric())` is better than `if(class(x) == "numeric" || class(x) == "integer")` 
