@@ -209,6 +209,9 @@ Functions allow you to automate common tasks rather than repeatedly writing the 
     * E.g. `readxl::read_xlsx()`
     * This makes it more obvious where the function is coming from
     * And avoids ambiguous code when two packages have a function with the same name
+
+#### Do not
+* Repeat yourself
  
 ## :heavy_check_mark: Automate checks for input data
 Automate the new data checks so you don't miss anything unexpected. Especially if you expect the data to be updated.
