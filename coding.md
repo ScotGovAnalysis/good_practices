@@ -197,7 +197,9 @@ Lint your code:
 ## :heavy_check_mark: Use functions
 > "You should consider writing a function whenever you've copied and pasted a block of code more than twice." – H. Wickham (our lord and saviour).
 
-Functions allow you to automate common tasks rather than repeatedly writing the same code. [R for Data Science](https://r4ds.had.co.nz/functions.html) provides a good explanation for using functions. tl;dr: **D**on't **R**epeat **Y**ourself [(DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)  
+Functions allow you to automate common tasks rather than repeatedly writing the same code. [R for Data Science](https://r4ds.had.co.nz/functions.html) provides a good explanation for using functions. 
+
+(tl;dr: **D**on't **R**epeat **Y**ourself [(DRY)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself))
 
 #### Do
 * Use several smaller functions rather that one large one. This includes small, well named, helper functions  
