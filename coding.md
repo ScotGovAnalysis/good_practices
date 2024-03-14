@@ -1,9 +1,9 @@
 # Good Coding Practices
-Writing good quality code makes life easier for other people and your future self. It can also reduce the risk of errors (h/t to [Best Coding Practices for R](https://bookdown.org/content/d1e53ac9-28ce-472f-bc2c-f499f18264a3/#coverpage) for much of this content).
+Writing good quality code makes life easier for other people and your future self. It can also reduce the risk of errors (h/t to [Best Coding Practices for R](https://bookdown.org/content/d1e53ac9-28ce-472f-bc2c-f499f18264a3/#coverpage) by Vikram Singh Rawat for much of this content).
 
 ## :heavy_check_mark: Create a Project
 ### Do
-    * Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
       * R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
       * Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
@@ -62,6 +62,7 @@ When you write code there are standard practices that are used across domains th
 2. Set all default variables or global options and all the path variables.
 3. Source all the code.
 4. Call all data files.
+
 This coherence keeps all your code easy to find. 
 
 ### Indendation
@@ -70,24 +71,24 @@ Indentation makes code readable. No matter what language you work in, your code 
    #### Bad:
 
     ```
-  foo <- function(first_arg, second_arg, third_arg){
-  create_file <- readxl::read_excel(path = first_arg, sheet = second_arg, range = third_arg)
-}
+    foo <- function(first_arg, second_arg, third_arg){
+    create_file <- readxl::read_excel(path = first_arg, sheet = second_arg, range = third_arg)
+    }
     ```
 
    #### Good:
 
     ```
-    foo <- function(
+   foo <- function(
       first_arg, second_arg, third_arg
-){
+    ){
     create_file <- readxl::read_excel(path = first_arg, 
 				      sheet = second_arg, 
                                       range = third_arg)
-}
+    }
     ```
 
-### Give your code breathing room.
+### Give your code breathing room
 
    #### Bad:
 
