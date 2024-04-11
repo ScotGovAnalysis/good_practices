@@ -3,7 +3,7 @@ Writing good quality code makes life easier for other people and your future sel
 
 ## :heavy_check_mark: Create a Project
 ### Do
-Work within an [R Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
+Work within an [RStudio Project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
 * R Projects act as your working directory, where the root is the directory created, or chosen, when setting up a new project.  
 * Once you create a project it is easier to manage your files and folders and it’s easier to give it somebody as well.
