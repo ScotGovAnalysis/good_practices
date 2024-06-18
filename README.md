@@ -1,3 +1,5 @@
+**Note: This repository has been archived. Similar content is now available on the [Statistics Group SharePoint site (internal)](https://scotsconnect.sharepoint.com/sites/StatisticsGroup-Org-SG/SitePages/Coding-Good-Practice.aspx).**
+
 # Good practice
 > "Know the rules well, so you can break them effectively." – The Dalai Lama
 
